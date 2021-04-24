@@ -26,15 +26,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: git clone https://github.com/cryptash/web
-    - run: cd web
-    - run: npm i
-    - run: rm -rf src/config.ts
-    - run: ls
-    - run: touch src/config.ts
-    - run: 'echo -e "const config = {server_url: \"https://chat.ciphen.net/\",socket_url: \"wss://chat.ciphen.net/\"}export default config" >> src/config.ts'
-    - run: npm run build
-    - run: cp -R build/* ../build/
-    - run: cd ../
+    - run: cd web && ls
+    - run: cd web && npm i
+    - run: cd web && rm -rf src/config.ts
+    - run: cd web && ls
+    - run: cd web && touch src/config.ts
+    - run: 'cd web && echo -e "const config = {server_url: \"https://chat.ciphen.net/\",socket_url: \"wss://chat.ciphen.net/\"}export default config" >> src/config.ts'
+    - run: cd web && npm run build
+    - run: cd web && cp -R build/* ../build/
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
       with:
