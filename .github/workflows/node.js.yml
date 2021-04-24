@@ -29,6 +29,7 @@ jobs:
     - run: cd web
     - run: npm i
     - run: rm -rf src/config.ts
+    - run: ls
     - run: touch src/config.ts
     - run: 'echo -e "const config = {server_url: \"https://chat.ciphen.net/\",socket_url: \"wss://chat.ciphen.net/\"}export default config" >> src/config.ts'
     - run: npm run build
@@ -39,7 +40,7 @@ jobs:
       with:
         author_name: Vlad Denisov
         author_email: vlad.a.denisov@gmail.com
-        message: "ci: lint & update docs"
+        message: "build: new build"
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
