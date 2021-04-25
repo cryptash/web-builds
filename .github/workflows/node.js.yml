@@ -34,6 +34,7 @@ jobs:
     - name: Build project
       working-directory: ./web
       run: CI=false npm run build 
+    - run: mkdir build
     - run: cd web && cp -R build/* ../build/
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
