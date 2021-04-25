@@ -30,8 +30,7 @@ jobs:
     - run: cd web && npm i
     - run: cd web && rm -rf src/config.ts
     - run: cd web && ls
-    - run: cd web && touch src/config.ts
-    - run: 'cd web && echo -e "const config = {server_url: \"https://chat.ciphen.net/\",socket_url: \"wss://chat.ciphen.net/\"}export default config" >> src/config.ts'
+    - run: cp config.ts web/src
     - name: Build project
       working-directory: ./web
       run: npm run build 
