@@ -1,5 +1,5 @@
 const config = {
   server_url: 'https://chat.ciphen.net/',
-  socket_url: 'wss://chat.ciphen.net:31337/'
+  socket_url: 'wss://chat.ciphen.net'
 }
 export default config
